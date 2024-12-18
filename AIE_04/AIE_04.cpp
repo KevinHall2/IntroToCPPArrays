@@ -37,4 +37,16 @@ void SortArray(int* arr, int count)
 	// TODO: 
 	// modify the values in the array so that when this method returns
 	// all values are sorted in ascending order
+	int indexOne = 0;
+	int indexTwo = 1;
+	bool swapComplete = false;
+	while (indexOne < count && indexTwo < count && !swapComplete)
+	{
+		if (arr[indexTwo] < arr[indexOne])
+		{
+			int temp = arr[indexOne];
+			indexOne++;
+		}
+	}
+	
 }

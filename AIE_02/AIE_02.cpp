@@ -38,7 +38,7 @@ int MinValue(const int* arr, int count)
 			smallestIndex = arr[count];
 		}
 	}
-	return 0;
+	return smallestIndex;
 }
 
 int MaxValue(const int* arr, int count)
@@ -52,7 +52,7 @@ int MaxValue(const int* arr, int count)
 			highestIndex = arr[count];
 		}
 	}
-	return 0;
+	return highestIndex;
 }
 
 int CountOccurrencesOfValue(const int* arr, int count, int search)
