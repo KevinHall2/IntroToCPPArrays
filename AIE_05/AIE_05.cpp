@@ -58,15 +58,40 @@ int main(int argc, char** argv)
 	//		a0, a1, a2, a3, a4, b0, b1, b2, b3, b4, c0, c1, c2, c3, c4,
 	// ------------------------------------------------------------------------
 		std::cout << "" << std::endl;
+		int primaryColumnIndex = 0;
+		int primaryRowIndex = 0;
 	for (int index = 0; index < ROWS * COLS; index++)
 	{
 		// TODO: convert "index" to a "rowIndex" and "colIndex" value
-		int rowIndex = 0;
-		int colIndex = 0;
+		if (index > 0)
+		{
+          primaryRowIndex = index % index;
+		}
+		
+		int secondaryRowIndex = primaryRowIndex;
+		if (index == COLS || (index < COLS * 2 && index >= COLS))
+		{
+			secondaryRowIndex++;
+		}
+		else if (index == COLS*2 || (index > COLS*2 && index <= COLS*ROWS))
+		{
+			secondaryRowIndex+=2;
+		}
+
+		if ((index >= 1 && index <= 4) || (index >= 6 && index <= 9) || (index >= 11 && index <= 14))
+		{
+			primaryColumnIndex++;
+		}
+
+        
+		if ((index == COLS) || (index == COLS * 2))
+		{
+			primaryColumnIndex = 0;
+		}
 
 		// use the resulting row and column index to print the value
 
-		std::cout << grid2D[rowIndex][colIndex] << ", ";
+		std::cout << grid2D[secondaryRowIndex][primaryColumnIndex] << ", ";
 		
 	}
 
@@ -90,18 +115,29 @@ int main(int argc, char** argv)
 	//		c0, c1, c2, c3, c4,
 	// ------------------------------------------------------------------------
 
-	for (int rowIndex = 0; rowIndex < ROWS; rowIndex++)
-	{
-		for (int colIndex = 0; colIndex < COLS; colIndex++)
-		{
-			// TODO: calculate "index" based on rowIndex/colIndex value
-			int index = 0; 
+	//std::cout << "" << std::endl;
+	//std::cout << "" << std::endl;
+	//for (int rowIndex = 0; rowIndex < ROWS; rowIndex++)
+	//{
+	//	for (int colIndex = 0; colIndex < COLS; colIndex++)
+	//	{
+	//		// TODO: calculate "index" based on rowIndex/colIndex value
+	//		int index;
+	//		if (colIndex == 0)
+	//		{
+	//			index = 0;
+	//		}
+	//		if (colIndex != 0 && rowIndex !=0)
+	//		{
+ //              index = colIndex/rowIndex; 
+	//		}
+	//		
 
-			// use the resulting index to print the value
-			std::cout << grid1D[index] << ", ";
-		}
-		std::cout << std::endl;
-	}
+	//		// use the resulting index to print the value
+	//		std::cout << grid1D[index] << ", ";
+	//	}
+	//	std::cout << std::endl;
+	//}
 
 	// ------------------------------------------------------------------------
 
