@@ -1,6 +1,8 @@
 #include "Application.h"
 #include "raylib.h"
-#include <stdlib.h>
+#include <ctime>
+#include <cstdlib>
+
 
 
 Application::Application()
@@ -38,6 +40,13 @@ void Application::Load()
 	
 	// write your code here
 
+	//initializer for the random number generator
+	srand(time(0));
+
+	for (int i = 0; i < 160; i++)
+	{
+		m_tiles[i] = rand() % 6;
+	}
 	// -----------------------------------------------------
 }
 
