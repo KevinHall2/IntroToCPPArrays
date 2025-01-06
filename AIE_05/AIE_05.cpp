@@ -115,29 +115,30 @@ int main(int argc, char** argv)
 	//		c0, c1, c2, c3, c4,
 	// ------------------------------------------------------------------------
 
-	//std::cout << "" << std::endl;
-	//std::cout << "" << std::endl;
-	//for (int rowIndex = 0; rowIndex < ROWS; rowIndex++)
-	//{
-	//	for (int colIndex = 0; colIndex < COLS; colIndex++)
-	//	{
-	//		// TODO: calculate "index" based on rowIndex/colIndex value
-	//		int index;
-	//		if (colIndex == 0)
-	//		{
-	//			index = 0;
-	//		}
-	//		if (colIndex != 0 && rowIndex !=0)
-	//		{
- //              index = colIndex/rowIndex; 
-	//		}
-	//		
+	std::cout << "" << std::endl;
+	std::cout << "" << std::endl;
+	for (int rowIndex = 0; rowIndex < ROWS; rowIndex++)
+	{
+		for (int colIndex = 0; colIndex < COLS; colIndex++)
+		{
+			// TODO: calculate "index" based on rowIndex/colIndex value
+			int index = colIndex;
+			if (rowIndex == 1)
+			{
+				index = colIndex + COLS;
+			}
+			else if (rowIndex == 2)
+			{
+				index = colIndex + (COLS * 2);
+			}
+			
+			
 
-	//		// use the resulting index to print the value
-	//		std::cout << grid1D[index] << ", ";
-	//	}
-	//	std::cout << std::endl;
-	//}
+			// use the resulting index to print the value
+			std::cout << grid1D[index] << ", ";
+		}
+		std::cout << std::endl;
+	}
 
 	// ------------------------------------------------------------------------
 
