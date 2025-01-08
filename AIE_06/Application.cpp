@@ -92,9 +92,22 @@ void Application::Draw()
 	// write your code here
 	float xPos = 0;
 	float yPos = 0;
-	Color color = GetTileColor(1); // pass in the tilevalue
+	for ( int xPos = 0; xPos < ROWS; xPos++)
+	{
+		for (int yPos = 0; yPos < COLS; yPos++)
+		{
 
-	DrawRectangle(xPos, yPos, m_tileWidth, m_tileHeight, color);
+          Color color = GetTileColor(m_tiles[(int)(xPos*yPos)]); // pass in the tilevalue
+        	DrawRectangle(xPos, yPos, m_tileWidth, m_tileHeight, color);
+			xPos + 19;
+			if (xPos > 20)
+			{
+				yPos + 19;
+			}
+		}
+	}
+	
+
 
 	// --------------------------------------------------------------------
 
