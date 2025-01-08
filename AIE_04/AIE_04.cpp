@@ -37,20 +37,25 @@ void SortArray(int* arr, int count)
 	// TODO: 
 	// modify the values in the array so that when this method returns
 	// all values are sorted in ascending order
-	int indexOne = 0;
-	int indexTwo = 0;
 	int temp;
-	for (indexOne = 0; indexOne < count; indexOne++)
+	bool swapped = true;
+	while (swapped)
 	{
-		for (indexTwo = indexOne + 1; indexTwo < count; indexTwo++)
-		{
-			if (indexTwo > indexOne)
-			{
-				temp = arr[indexTwo];
-				arr[indexTwo] = arr[indexOne];
-				arr[indexOne] = arr[indexTwo];
-			}
-		}
+		swapped = false;
+    	for (int i = 0; i < count -1; i++)
+	    {
+		  if (arr[i] > arr[i +1])
+		  {
+			temp = arr[i];
+			arr[i] = arr[i + 1];
+			arr[i + 1] = temp;
+			swapped = true;
+			
+		  }
+          std::cout << arr[i] << std::endl;
+	    }
+		
 	}
+
 	
 }
