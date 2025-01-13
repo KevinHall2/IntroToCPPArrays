@@ -47,17 +47,22 @@ const int* BinarySearch(const int* arr, int count, int searchVal)
 	// This method should:
 	//	- Return: nullptr if the value is not found
 	//  - Return: pointer to the found value in the array
-	int i = 0;
-	while (i <= count - 1)
+	int leftRange = 0;
+	int rightRange = count - 1;
+	while (leftRange <= rightRange)
 	{
-		if (arr[i] == searchVal)
+		int middleValue = ((leftRange + rightRange) / 2);
+		if (arr[middleValue] == searchVal)
 		{
-			return &arr[i];
-			i++;
+			return &arr[middleValue];			
 		}
-		else
+		if (arr[middleValue] < searchVal)
 		{
-			i++;
+			leftRange = middleValue + 1;
+		}
+		if (arr[middleValue] > searchVal)
+		{
+			rightRange = middleValue - 1;
 		}
 		
 	}
